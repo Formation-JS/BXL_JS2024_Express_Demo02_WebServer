@@ -6,7 +6,14 @@ const app = express();
 
 //TODO Configuration du serveur
 
-//TODO Définir les routes
+//! Définir les routes
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
+
+app.get('/danger', (req, res) => {
+    throw new Error('Ca va pété 💣');
+});
 
 
 //! Démarrer le serveur
