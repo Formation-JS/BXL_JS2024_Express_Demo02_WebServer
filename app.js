@@ -13,13 +13,15 @@ app.set('view engine', 'handlebars');
 app.set('views', './views');
 
 //? Middleware
+//  App level middleware
 app.use((req, res, next) => {
-    // App level middleware
     console.log(`Requete : ${req.url}`);
     next();
 });
-
+//  Logger middleware -> Trace toute les requetes
 app.use(morgan('tiny'));
+//  Static middleware -> Rend accessible tous les fichiers du dossier « public »
+app.use(express.static('public'))
 
 
 //! Définir les routes
