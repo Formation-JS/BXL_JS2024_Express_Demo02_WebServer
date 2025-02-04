@@ -7,7 +7,7 @@ npm init
 ```
 
 - Installation des packages necessaires \
-  _Choix du moteur de vue [Liste dispo](https://www.npmjs.com/package/@ladjs/consolidate)_
+  _Choix du moteur de vue [Liste dispo](https://www.javatpoint.com/expressjs-template)_
 ```
 npm install express@5
 npm install handlebars express-handlebars
@@ -26,3 +26,8 @@ npm install express@5 handlebars express-handlebars morgan
 ```
 git init
 ```
+
+## Principe de fonctionnement des middlewares
+_Les middlewares sont des fonctions qui seront executé à la reception d'une requete._ \
+_Le passage au prochain middleware est déclanché par l'utilisation de la méthode "next"._
+![Principe middleware](/ressources/middleware.png)
