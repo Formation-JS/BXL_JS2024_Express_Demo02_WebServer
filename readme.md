@@ -10,11 +10,11 @@ npm init
   _Choix du moteur de vue [Liste dispo](https://www.npmjs.com/package/@ladjs/consolidate)_
 ```
 npm install express@5
-npm install handlebars 
+npm install handlebars express-handlebars
 npm install morgan
 
 # Alternative
-npm install express@5 handlebars morgan
+npm install express@5 handlebars express-handlebars morgan
 ```
 
 - Customiser le fichier « package.json »

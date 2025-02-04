@@ -1,5 +1,6 @@
 import express from 'express';
 import morgan from 'morgan';
+import { engine } from 'express-handlebars';
 
 
 //! Création du serveur web
@@ -7,6 +8,9 @@ const app = express();
 
 
 //! Configuration du serveur
+app.engine('handlebars', engine());
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 //? Middleware
 app.use((req, res, next) => {
@@ -20,7 +24,8 @@ app.use(morgan('tiny'));
 
 //! Définir les routes
 app.get('/', (req, res) => {
-    res.send('Hello World');
+    const today = (new Date()).toLocaleDateString('fr-be', { dateStyle: 'full' })
+    res.render('index', { today });
 });
 
 app.get('/danger', (req, res) => {
