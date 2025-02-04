@@ -1,0 +1,19 @@
+{
+  "name": "demo-express-02",
+  "version": "0.1.0",
+  "description": "Demo d'express",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aurélien St",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.1",
+    "handlebars": "^4.7.8",
+    "morgan": "^1.10.0"
+  }
+}
