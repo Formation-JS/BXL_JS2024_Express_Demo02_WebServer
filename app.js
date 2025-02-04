@@ -1,6 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import { engine } from 'express-handlebars';
+import data from './data.json' with { type: 'json' }; 
 
 
 //! Création du serveur web
@@ -43,12 +44,8 @@ app.get('/number/:nb', (req, res) => {
 
 app.get('/person', (req, res) => {
 
-    const people = [
-        { firstname: 'Della', lastname: 'Duck' },
-        { firstname: 'Zaza', lastname: 'Vanderquack' },
-        { firstname: 'Gontran', lastname: 'Bonheur' },
-        { firstname: 'Balthazar', lastname: 'Picsou' }
-    ];
+    // Acces au donnée contenu dans le fichier "json"
+    const people = data.people;
 
     res.render('person', {people});
 });
