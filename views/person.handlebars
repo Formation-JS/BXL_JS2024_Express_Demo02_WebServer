@@ -1,0 +1,8 @@
+<h1>Liste des personnes</h1>
+<ul>
+    {{#each people}}
+        <li>{{this.firstname}} {{this.lastname}}</li>
+    {{else}}
+        <li>Personne n'a été encodé !</li>
+    {{/each}}
+</ul>

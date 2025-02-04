@@ -28,6 +28,29 @@ app.get('/', (req, res) => {
     res.render('index', { today });
 });
 
+app.get('/number/:nb', (req, res) => {
+
+    const nb = parseInt(req.params.nb);
+    console.log(`Parametre reçu : ${nb}`);
+
+    const desc = (nb % 2 === 0) ? 'pair' : 'impair';
+    const isUltimate = (nb === 42);
+
+    res.render('number', { nb, desc, isUltimate });
+});
+
+app.get('/person', (req, res) => {
+
+    const people = [
+        { firstname: 'Della', lastname: 'Duck' },
+        { firstname: 'Zaza', lastname: 'Vanderquack' },
+        { firstname: 'Gontran', lastname: 'Bonheur' },
+        { firstname: 'Balthazar', lastname: 'Picsou' }
+    ];
+
+    res.render('person', {people});
+});
+
 app.get('/danger', (req, res) => {
     throw new Error('Ca va pété 💣');
 });
